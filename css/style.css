@@ -1,0 +1,453 @@
+/* Variable define */
+:root{
+    --primary-color: #ff553e;
+    --secondary-color : #333;
+    --white-color: #fff;
+    --black-color : #000;
+}
+
+*,*:after,*:before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:active,:hover,:focus{
+    outline: 0 !important;
+    outline-offset: 0;
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Dosis", sans-serif;
+    font-weight:400;
+    font-size: 100%;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--primary-color) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar{
+    width : 0.3125rem;
+}
+::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+}
+::-webkit-scrollbar-track{
+    background: var(--white-color);
+}
+
+h1{
+    font-size: 3rem;
+    font-weight:400;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color:var(--white-color)
+}
+
+h2{
+    font-weight:600;
+    font-size: 1.56rem;
+    text-transform: capitalize;
+    color:var(--white-color);
+    line-height: 2.5rem;
+}
+
+h4{
+    color:var(--white-color);
+    text-transform: capitalize;
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 0.9375rem;
+    /* transition: all o.3s linear; */
+}
+
+h5{
+    color:var(--white-color);
+    text-transform: capitalize;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    /* transition: all o.3s linear; */
+}
+
+p{
+    font-size: 1rem;
+    color:var(--white-color);
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 0.0625rem;
+    opacity : 0.8;
+}
+
+.wrapper{
+padding-top: 4rem;
+padding-bottom: 4rem;
+background-color: var(--secondary-color);
+}
+.text-content{
+    width:60% ;
+    margin:auto,
+}
+
+
+/*white-btn*/
+.main-btn {
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+}
+.main-btn span {
+  transition: all 0.3s;
+}
+.main-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.5);
+  transform: scale(0.1, 1);
+}
+.main-btn:hover span {
+  letter-spacing: 2px;
+}
+.main-btn:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.main-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.1);
+}
+.main-btn:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}
+
+
+/*Black button*/
+.btn-black {
+	color: #000;
+	transition: all 0.3s;
+	position: relative;
+}
+.btn-black span {
+	transition: all 0.3s;
+}
+.btn-black::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.3s;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(0, 0, 0, 1);
+	border-bottom-color: rgba(0, 0, 0, 1);
+	transform: scale(0.1, 1);
+}
+.btn-black:hover span {
+	letter-spacing: 2px;
+}
+.btn-black:hover::before {
+	opacity: 1;	
+	transform: scale(1, 1);	
+}
+.btn-black::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.3s;
+	background-color: rgba(0, 0, 0, 0.27);
+}
+.btn-black:hover::after {
+	opacity: 0;	
+	transform: scale(0.1, 1);
+}
+
+
+
+/*Header design*/
+.top-header{
+    background-color: var(--secondary-color);
+}
+.top-header span{
+    font-size: 0.875rem;
+    color:var(--white-color);
+    letter-spacing: 0.1062rem;
+}
+
+.navigation-wrap{
+    position:fixed;
+    width:100%;
+    left:0;
+    z-index : 1000;
+
+}
+.navbar-nav .nav-item:hover{
+    transition: all 0.5s ease-out;
+}
+.navbar-toggler:focus{
+outline: unset;
+border: none;
+}
+
+.navigation-wrap .nav-link{
+    padding-top : 0.935;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.875rem;
+    letter-spacing: 0.0625rem;
+    color: var(--white-color);
+}
+
+.navigation-wrap .nav-link:hover,
+.navigation-wrap .nav-link:active{
+color: var(--primary-color);
+}
+ /* change navbar when scrolling*/
+
+.navigation-wrap.scroll-on{
+    position:fixed;
+    background-color: var(--black-color);
+    top:0;
+    left:0;
+    width:100%;
+    box-shadow:  0 0.125rem 1.75rem 1 rgb(0,0,0,0.09);
+    transition: all 0.15s ease-in-out 0s;
+}
+.navigation-wrap.scroll-on .nav-link:hover,
+.navigation-wrap.scroll-on .nav-link:active{
+    color: var(--primary-color);
+}
+
+
+/* Top-baner design*/
+
+.carousel-caption{
+    top:12rem;
+}
+#home .carousel-caption p{
+    max-width: 36.25rem;
+    margin: 1.0625rem auto;
+}
+
+/* nav brand*/
+.navigation-wrap .navbar-brand img{
+    height: 2.8rem;
+}
+
+.navbar-toggler{
+    color: var(--white-color);
+    line-height: 2;
+}
+.navigation-wrap{
+    text-align: right;
+    background-color: var(--black-color);
+}
+
+.navigation-wrap .nav-link{
+    line-height: 1.875rem;
+}
+
+/* Banner Design*/
+
+#home{
+    padding: 4.3rem 0 0;
+}
+
+#home .carousel-caption{
+    top:4.5rem;
+}
+
+@media screen and (max-width: 575px) {
+  h1{
+    font-size: 1.5rem;
+  }
+  h2{
+    font-size: 1rem;
+    line-height: 15px;
+    font-size: 0.937rem;
+  }
+
+
+#home .carousel-caption{
+    top:0.5rem;
+}
+
+#home .carousel-caption p{
+    font-size: 1rem;
+    line-height: 20px;
+    max-width: 45.25rem;
+}
+}
+
+
+@media screen and (max-width: 430px) {
+    h1{
+        margin-bottom: 0;
+        margin-top: 1rem;
+    }
+
+    /* Top Banner*/
+    .top-header{
+        display: none;
+    }
+
+    #home .carousel-caption p{
+        font-size : 0.85rem;
+        line-height:1.1rem;
+    }
+
+    #home .carousel-caption{
+       padding:0;
+    }
+}
+
+/* New Arrivals section*/
+
+.new-arrivals .banner-info{
+    bottom:30px;
+    width: 100%;
+    position:absolute;
+    z-index:9;
+    padding: 0 15px;
+}
+
+.new-arrivals .card-banner:nth-child(2) h2,
+.new-arrivals .card-banner:nth-child(2) p,
+.new-arrivals .card-banner:nth-child(2) a{
+    color:var(--black-color)
+}
+
+.new-arrivals .card-banner .card-thumb,
+.products .item-product{
+    position: relative;
+    display:block;
+    overflow:hidden;
+}
+
+.new-arrivals .card-banner .card-thumb img,
+.products .item-product img{
+    transition : all 0.5s ease-out 0s;
+}
+
+.new-arrivals .card-banner .card-thumb img:hover,
+.products .item-product img:hover{
+    transform: scale(1.2);
+    opacity: 0.6;
+}
+
+
+/* product section Design*/
+.products .wrapper{
+background-color: var(--black-color);
+}
+
+.products .nav-tabs{
+border: 0;
+justify-content: center;
+}
+
+.products .nav-tabs .nav-link{
+    display:block;
+    padding: 0 30px;
+    border: 1px solid var(--white-color);
+    border-radius: 20px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    margin: 10px;
+    height:36px;
+    line-height: 34px;
+    text-transform: uppercase;
+
+}
+
+.products .product-info .cat-parent,
+.products .product-info .wishlist{
+    font-size: 0.875rem;
+    color: var(--white-color);
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.products .product-title a{
+    margin: 0 0 7px;
+    display:block;
+    color:var(--white-color);
+
+}
+
+.products .rating i{
+    color: #f4d632;
+}
+
+.basket a i{
+    color: var(--white-color)
+}
+
+/*deal of the day design*/
+.deal-of-the-day{
+    background-image: url('../images/img/img-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Blog section design*/
+.blog-section{
+    background-color: var(--black-color);
+}
+
+/*Footer section design*/
+footer{
+    background-color: var(--secondary-color);
+}
+
+footer .footer-social a i{
+    font-size: 1.5rem;
+    color: var(--white-color);
+    padding: 1rem;
+}
+
+footer .footer-social a:hover i{
+    color: var(--primary-color);
+}
+
